@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Renyu Demo (Audio)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" href="assets/css/default.css" />
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+</head>
+
+<body>
+
+
+    <!-- orientation control ////////////////////////// -->
+    <div class="rotatephone" style="background-color: black;">
+        <img src="resources/rotate_phone_words_white_2.png"
+             style="height: 100%; width: 100%; object-fit: contain;" />
+    </div>
+
+    <!-- video background ////////////////////////// -->
+    <div id="video-bg">
+        <video id="video" playsinline=""></video>
+    </div>
+
+    <!-- Background Audio ///////////////////////////////////////////////  -->
+    <div id="div-bg-audio" class="container" style="z-index: -100; display: block;">
+        <audio id="bg-audio-mp3" src="resources/renyu-bg-mp3.mp3" autoplay loop></audio>
+        <audio id="bg-audio-ogg" src="resources/renyu-bg-ogg.ogg" autoplay loop></audio>
+    </div>
+
+
+    <!-- Magicast Loading page ////////////////////////// -->
+    <div id="pageFirst" class="page none">
+
+        <!--<div id="iosWxMini" class="none">因iOS微信小程序的限制<br />小程序不能打开摄像头<br />请点击“立即体验”</div>-->
+        <div id="div-loading">
+            <img src="resources/openanim-landscape2.jpg" />
+        </div>
+
+        <div id="div-startAR" class="main">
+            <div id="wrapper-startAR" class="wrapper">
+                <div id="container-start-video" style="margin: 0 auto; height: 10vh; width: 40vw;">
+                    <img id="btnStartAR" src="resources/btn_ar.png" style="height: 100%; width: 100%; object-fit: contain; z-index: 2;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- iPhone Safari 提示 ////////////////////////// -->
+    <div id="pageWxIos" class="maskerMsg none">
+        <div class="masker"></div>
+        <div>
+            <img class="icon-wx-ios" src="assets/images/share_ios.png" />
+            <div class="tip">
+                <div>
+                    请点击右上角
+                    <br />选择“在Safari中打开”
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Magicast Scanning page ////////////////////////// -->
+    <div id="pageScanning" class="page none">
+        <div id="div-scanning" class="main">
+            <div id="wrapper-scanning" class="wrapper">
+                <div id="container-scan-gif" style="margin: 0 auto; height: 60vh; width: 40vw;">
+                    <img id="scanningGif" src="resources/scan.gif" style="height: 100%; width: 100%;" />
+                </div>
+                <div id="container-start-video" style="margin: 0 auto; height: 10vh; width: 40vw; padding-top: 5vh;">
+                    <img id="btnReady" src="resources/btn_ready.png" style="height: 100%; width: 100%; object-fit: contain; z-index: 2;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RenYu display page ////////////////////////// -->
+    <div id="pageDisplay" class="page none">
+        <div id="div-display" class="main">
+            <div id="wrapper-display" class="wrapper">
+                <div id="container-renyu-gif" style="margin: 0 auto; height: 60vh; width: 70vw;">
+                    <img id="renyuGif" src="https://media.giphy.com/media/n92gqIF7iNDGBEsZ6C/giphy.gif" style="height: 100%; width: 100%; object-fit: contain;" />
+                </div>
+                <div id="container-btnMore" style="margin: 0 auto; height: 10vh; width: 40vw; padding-top: 5vh;">
+                    <img id="btnMore" src="resources/btn_more.png" style="height: 100%; width: 100%; object-fit: contain; z-index: 2;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voiceover ///////////////////////////////////////////////  -->
+    <div id="div-voiceover-audio" class="container" style="z-index: -100; display: block;">
+        <audio id="voiceover-audio-mp3" src="resources/renyu-ch1-cut-mp3.mp3"></audio>
+        <audio id="voiceover-audio-ogg" src="resources/renyu-ch1-cut-ogg.ogg"></audio>
+    </div>
+
+    <!-- RenYu introduction passage /////////////////// -->
+    <div id="pageMore" class="page none">
+        <div id="div-more" class="main" style="z-index: 6;">
+            <div id="wrapper-more" class="wrapper" style="background-color:white;">
+                <div id="container-btnBack" style="margin: 0 auto; height: 8vh; width: 40vw; padding-top: 2vh; padding-bottom: 2vh;">
+                    <img id="btnBack" src="resources/btn_back.png" style="height: 100%; width: 100%; object-fit: contain;" />
+                </div>
+                <div id="container-renyu-intro" style="margin: 0 auto; height: auto; width: 100vw;">
+                    <img id="renyuIntro" src="resources/renyu_intro.jpg" style="height: auto; width: 70%;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////// -->
+
+    <a-scene embedded style="z-index: -100" vr-mode-ui='enabled: false;'>
+        <a-node id="dummy"></a-node>
+
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+
+        <a-entity>
+            <a-camera wasd-controls-enabled="true" look-controls-enabled="true" />
+        </a-entity>
+    </a-scene>
+
+
+    <!-- ////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////// -->
+    <!-- Javascript imports ////////////////////////// -->
+    <script type="text/javascript" src="assets/libs/webrtc/adapter.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            //        const vconsole = new VConsole();
+
+            const script = document.createElement('script');
+            script.src = 'assets/js/app.js?t=' + (new Date()).getTime();
+            document.body.appendChild(script);
+        })();
+    </script>
+</body>
+</html>
