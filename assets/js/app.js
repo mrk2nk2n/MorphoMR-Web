@@ -152,9 +152,13 @@
         static $overflowToggle() {
             document.body.style.overflowY = "auto"
         }
-        static $aframeToggle() {
+        static $aframeShow() {
             var aframeScene = AFRAME.scenes[0]
-            aframeScene.style.zIndex = 100
+            aframeScene.style.zIndex = -10
+        }
+        static $aframeHide() {
+            var aframeScene = AFRAME.scenes[0]
+            aframeScene.style.zIndex = -100
         }
         static $loadSceneNode() {
             s.$("#dummy").load();
@@ -225,7 +229,7 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeToggle(), s.$loadSceneNode()
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode()
             }, !1)
         }
         pageDisplay() {
@@ -236,7 +240,7 @@
         }
         pageMore() {
             s.$("#btnBack").addEventListener("click", () => {
-                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle
+                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide()
             }, !1)
         }
         pagePreview() {
