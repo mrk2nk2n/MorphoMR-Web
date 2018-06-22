@@ -166,7 +166,7 @@
         static $toggleLookControls(e) {
             s.$("#aframeCamera").setAttribute('look-controls', { enabled: e })
             var aframeScene = AFRAME.scenes[0]
-            aframeScene.style.zIndex = 100
+            //aframeScene.style.zIndex = 100
         }
         static $resetCameraRotation() {
             s.$("#aframeCamera").setAttribute('rotation', { x: 0, y: 0, z: 0 })
