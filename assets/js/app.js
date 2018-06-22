@@ -258,8 +258,23 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$setImageToCamera()
+                this.posterDisplay()
             }, !1)
+        }
+        posterDisplay() {
+            s.$hide("#container-scan-gif"), s.$hide("#btnReady"), s.$show("#container-renyuPoster"), this.pageDisplay();
+            window.setTimeout(function () {
+                e = "pageDisplay"
+                const t = document.querySelectorAll(".page");
+                for (const e of t) e.style.display = "none";
+                s.$show("#" + e)
+                s.$aframeShow();
+                s.$setImageToCamera();
+            }, 1000)
+        }
+        afterPoster() {
+            this.pageDisplay(), this.toPage("pageDisplay"),
+            s.$aframeShow(), s.$setImageToCamera()
         }
         pageDisplay() {
             s.$playaudio("#voiceover-audio-mp3"),
@@ -269,7 +284,8 @@
         }
         pageMore() {
             s.$("#btnBack").addEventListener("click", () => {
-                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide()
+                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide(),
+                    s.$show("#container-scan-gif"), s.$show("#btnReady"), s.$hide("#container-renyuPoster")
             }, !1)
         }
         pagePreview() {
@@ -318,6 +334,7 @@ window.onload = function () {
 function loadMediaAll() {
     document.getElementById("btnReady").src = "resources/btn_ready.png"
     document.getElementById("scanningGif").src = "resources/scan.gif"
+    document.getElementById("renyuPoster").src = "resources/renyu_main_poster_cut1.png"
     document.getElementById("btnMore").src = "resources/btn_more.png"
     document.getElementById("voiceover-audio-mp3").src = "resources/renyu-ch1-cut-mp3.mp3"
     document.getElementById("voiceover-audio-ogg").src = "resources/renyu-ch1-cut-ogg.ogg"
