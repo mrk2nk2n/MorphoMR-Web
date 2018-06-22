@@ -165,8 +165,11 @@
         }
         static $toggleLookControls(e) {
             s.$("#aframeCamera").setAttribute('look-controls', { enabled: e })
-            //var aframeScene = AFRAME.scenes[0]
-            //aframeScene.style.zIndex = 100
+            var aframeScene = AFRAME.scenes[0]
+            aframeScene.style.zIndex = 100
+        }
+        static $resetCameraRotation() {
+            s.$("#aframeCamera").setAttribute('rotation', { x: 0, y: 0, z: 0 })
         }
     }
     class n {
@@ -243,7 +246,7 @@
                     this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle()
                 }, !1),
                 s.$("#btnToggleLookControls").addEventListener("click", () => {
-                    s.$toggleLookControls(true)
+                    s.$resetCameraRotation(), s.$toggleLookControls(true)
             }, !1)
         }
         pageMore() {
