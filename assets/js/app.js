@@ -268,8 +268,10 @@
                 const t = document.querySelectorAll(".page");
                 for (const e of t) e.style.display = "none";
                 s.$show("#" + e)
-                s.$aframeShow();
-                s.$setImageToCamera();
+
+                s.$aframeShow()
+                s.$setImageToCamera()
+                s.$playaudio("#voiceover-audio-mp3")
             }, 1000)
         }
         afterPoster() {
@@ -277,15 +279,14 @@
             s.$aframeShow(), s.$setImageToCamera()
         }
         pageDisplay() {
-            s.$playaudio("#voiceover-audio-mp3"),
             s.$("#btnMore").addEventListener("click", () => {
-                    this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle()
+                this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle(), s.$show("#safetyBg")
                 }, !1)
         }
         pageMore() {
             s.$("#btnBack").addEventListener("click", () => {
                 this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide(),
-                    s.$show("#container-scan-gif"), s.$show("#btnReady"), s.$hide("#container-renyuPoster")
+                    s.$show("#container-scan-gif"), s.$show("#btnReady"), s.$hide("#container-renyuPoster"), s.$hide("#safetyBg")
             }, !1)
         }
         pagePreview() {

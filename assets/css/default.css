@@ -34,6 +34,18 @@ body {
 /* ///////////////////////////////////////////////// */
 /* settings for video background display /////////// */
 
+.safetyBg {
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    width: 101%;
+    height: 101%;
+    z-index: -49;
+}
+
+/* ///////////////////////////////////////////////// */
+/* settings for rotate phone instructions /////////// */
+
 .rotatephone {
     display: none;
     position: absolute;
@@ -42,7 +54,6 @@ body {
     height: 101%;
     text-align: center;
     z-index: 500;
-    /* and so on... */
 }
 
 @media screen and (orientation: portrait) {

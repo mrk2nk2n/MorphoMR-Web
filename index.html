@@ -9,6 +9,10 @@
 </head>
 
 <body>
+    <!-- safety-background ////////////////////////// -->
+    <div id="safetyBg" style="background-color: white; display: none; position: fixed; overflow: hidden; margin: 0 auto; height:100%; width: 100%; z-index: -9;">
+    </div>
+
 
     <!-- orientation control ////////////////////////// -->
     <div class="rotatephone" style="background-color: black;">
@@ -120,7 +124,7 @@
         <a-node id="dummy"></a-node>
 
         <a-assets>
-            <video id="renyuMP4" autoplay loop src=""></video>
+            <video id="renyuMP4" autoplay loop muted src=""></video>
         </a-assets>
 
         <a-entity id="imageWrapper" position="0 0 0" rotation="0 0 0">
