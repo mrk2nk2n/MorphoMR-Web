@@ -244,12 +244,12 @@
         }
         pageFirst() {
             s.$("#btnStartAR").addEventListener("click", () => {
-                this.openCamera(!0), this.pageScanning()
+                this.openCamera(!0), this.pageScanning(), s.$loadSceneNode(), s.$toggleLookControls(true)
             }, !1)
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(true), s.$setImageToCamera()
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$setImageToCamera()
             }, !1)
         }
         pageDisplay() {
