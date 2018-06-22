@@ -312,7 +312,6 @@
     });
 
 window.onload = function () {
-    alert("page has loaded");
     loadMediaAll();
 }
 
@@ -324,4 +323,5 @@ function loadMediaAll() {
     document.getElementById("voiceover-audio-ogg").src = "resources/renyu-ch1-cut-ogg.ogg"
     document.getElementById("btnBack").src = "resources/btn_back.png"
     document.getElementById("renyuIntro").src = "resources/renyu_intro.jpg"
+    document.getElementById("renyuMP4").src = "resources/renyu1.mp4"
 }
