@@ -232,7 +232,7 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(true)
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(false)
             }, !1)
         }
         pageDisplay() {
