@@ -183,6 +183,15 @@
             imageWrapper.setAttribute('position', { x: p1, y: p2, z: p3 })
             imageWrapper.setAttribute('rotation', { x: r1, y: r2, z: r3  })
         }
+        static $loadMediaAll() {
+            s.$("#btnReady").src = "resources/btn_Ready.png"
+            s.$("#scanningGif").src = "resources/scan.gif"
+            s.$("#btnMore").src = "resources/btn_more.png"
+            s.$("#voiceover-audio-mp3").src = "resources/renyu-ch1-cut-mp3.mp3"
+            s.$("#voiceover-audio-ogg").src = "resources/renyu-ch1-cut-ogg.ogg"
+            s.$("#btnBack").src = "resources/btn_back.png"
+            s.$("#renyuIntro").src = "resources/renyu_intro.jpg"
+        }
     }
     class n {
         constructor(e, t, i) {
@@ -300,4 +309,11 @@
             })
         }
     }
-});
+    });
+
+window.onload = function () {
+    alert("page has loaded");
+}
+document.getElementById("renyuMP4").onload = function () {
+    alert("video has loaded");
+}
