@@ -163,6 +163,9 @@
         static $loadSceneNode() {
             s.$("#dummy").load();
         }
+        static $toggleLookControls(e) {
+            s.$("#aframeCamera").setAttribute('look-controls', { enabled: e })
+        }
     }
     class n {
         constructor(e, t, i) {
@@ -229,18 +232,18 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode()
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(true)
             }, !1)
         }
         pageDisplay() {
             s.$playaudio("#voiceover-audio-mp3"),
                 s.$("#btnMore").addEventListener("click", () => {
-                    this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle()
+                    this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle(), s.$toggleLookControls(false)
             }, !1)
         }
         pageMore() {
             s.$("#btnBack").addEventListener("click", () => {
-                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide()
+                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide(), s.$toggleLookControls(true)
             }, !1)
         }
         pagePreview() {
