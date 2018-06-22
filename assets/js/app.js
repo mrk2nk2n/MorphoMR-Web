@@ -313,7 +313,15 @@
 
 window.onload = function () {
     alert("page has loaded");
+    loadMediaAll();
 }
-document.getElementById("renyuMP4").onload = function () {
-    alert("video has loaded");
+
+function loadMediaAll() {
+    document.getElementById("btnReady").src = "resources/btn_Ready.png"
+    document.getElementById("scanningGif").src = "resources/scan.gif"
+    document.getElementById("btnMore").src = "resources/btn_more.png"
+    document.getElementById("voiceover-audio-mp3").src = "resources/renyu-ch1-cut-mp3.mp3"
+    document.getElementById("voiceover-audio-ogg").src = "resources/renyu-ch1-cut-ogg.ogg"
+    document.getElementById("btnBack").src = "resources/btn_back.png"
+    document.getElementById("renyuIntro").src = "resources/renyu_intro.jpg"
 }
