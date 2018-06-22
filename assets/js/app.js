@@ -171,6 +171,18 @@
         static $resetCameraRotation() {
             s.$("#aframeCamera").setAttribute('rotation', { x: 0, y: 0, z: 0 })
         }
+        static $setImageToCamera() {
+            var p1 = s.$("#aframeCamera").getAttribute('position').x
+            var p2 = s.$("#aframeCamera").getAttribute('position').y
+            var p3 = s.$("#aframeCamera").getAttribute('position').z
+            var r1 = s.$("#aframeCamera").getAttribute('rotation').x
+            var r2 = s.$("#aframeCamera").getAttribute('rotation').y
+            var r3 = s.$("#aframeCamera").getAttribute('rotation').z
+            console.log("Position " + p1 + " " + p2 + " " + p3 + " " + "Rotation " + r1 + " " + r2 + " " + r3)
+            var imageWrapper = s.$("#imageWrapper")
+            imageWrapper.setAttribute('position', { x: p1, y: p2, z: p3 })
+            imageWrapper.setAttribute('rotation', { x: r1, y: r2, z: r3  })
+        }
     }
     class n {
         constructor(e, t, i) {
@@ -237,7 +249,7 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode()
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(true)
             }, !1)
         }
         pageDisplay() {
@@ -246,7 +258,7 @@
                     this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle()
                 }, !1),
                 s.$("#btnToggleLookControls").addEventListener("click", () => {
-                    s.$resetCameraRotation(), s.$toggleLookControls(true)
+                    s.$setImageToCamera()
             }, !1)
         }
         pageMore() {
