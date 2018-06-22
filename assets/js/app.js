@@ -192,6 +192,12 @@
             s.$("#btnBack").src = "resources/btn_back.png"
             s.$("#renyuIntro").src = "resources/renyu_intro.jpg"
         }
+        static $toggleSafetyBg(e) {
+            if(e === true)
+                s.$("#safetyBg").style.zIndex = -9
+            else if (e === false)
+                s.$("#safetyBg").style.zIndex = -99
+        }
     }
     class n {
         constructor(e, t, i) {
@@ -280,13 +286,13 @@
         }
         pageDisplay() {
             s.$("#btnMore").addEventListener("click", () => {
-                this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle(), s.$show("#safetyBg")
+                this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle(), s.$toggleSafetyBg(true)
                 }, !1)
         }
         pageMore() {
             s.$("#btnBack").addEventListener("click", () => {
                 this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide(),
-                    s.$show("#container-scan-gif"), s.$show("#btnReady"), s.$hide("#container-renyuPoster"), s.$hide("#safetyBg")
+                    s.$show("#container-scan-gif"), s.$show("#btnReady"), s.$hide("#container-renyuPoster"), s.$toggleSafetyBg(false)
             }, !1)
         }
         pagePreview() {
