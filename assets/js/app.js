@@ -184,7 +184,7 @@
             imageWrapper.setAttribute('rotation', { x: r1, y: r2, z: r3  })
         }
         static $loadMediaAll() {
-            s.$("#btnReady").src = "resources/btn_Ready.png"
+            s.$("#btnReady").src = "resources/btn_ready.png"
             s.$("#scanningGif").src = "resources/scan.gif"
             s.$("#btnMore").src = "resources/btn_more.png"
             s.$("#voiceover-audio-mp3").src = "resources/renyu-ch1-cut-mp3.mp3"
@@ -316,7 +316,7 @@ window.onload = function () {
 }
 
 function loadMediaAll() {
-    document.getElementById("btnReady").src = "resources/btn_Ready.png"
+    document.getElementById("btnReady").src = "resources/btn_ready.png"
     document.getElementById("scanningGif").src = "resources/scan.gif"
     document.getElementById("btnMore").src = "resources/btn_more.png"
     document.getElementById("voiceover-audio-mp3").src = "resources/renyu-ch1-cut-mp3.mp3"
