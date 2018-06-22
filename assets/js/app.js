@@ -234,7 +234,7 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow()
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode()
             }, !1)
         }
         pageDisplay() {
@@ -243,7 +243,7 @@
                     this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle()
                 }, !1),
                 s.$("#btnToggleLookControls").addEventListener("click", () => {
-                    s.$toggleLookControls(true), s.$loadSceneNode()
+                    s.$toggleLookControls(true)
             }, !1)
         }
         pageMore() {
