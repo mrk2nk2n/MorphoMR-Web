@@ -249,17 +249,14 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(true)
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(true), s.$setImageToCamera()
             }, !1)
         }
         pageDisplay() {
             s.$playaudio("#voiceover-audio-mp3"),
             s.$("#btnMore").addEventListener("click", () => {
                     this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle()
-                }, !1),
-                s.$("#btnToggleLookControls").addEventListener("click", () => {
-                    s.$setImageToCamera()
-            }, !1)
+                }, !1)
         }
         pageMore() {
             s.$("#btnBack").addEventListener("click", () => {
