@@ -165,6 +165,8 @@
         }
         static $toggleLookControls(e) {
             s.$("#aframeCamera").setAttribute('look-controls', { enabled: e })
+            //var aframeScene = AFRAME.scenes[0]
+            //aframeScene.style.zIndex = 100
         }
     }
     class n {
@@ -232,18 +234,21 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode(), s.$toggleLookControls(false)
+                this.toPage("pageDisplay"), this.pageDisplay(), s.$aframeShow(), s.$loadSceneNode()
             }, !1)
         }
         pageDisplay() {
             s.$playaudio("#voiceover-audio-mp3"),
-                s.$("#btnMore").addEventListener("click", () => {
-                    this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle(), s.$toggleLookControls(false)
+            s.$("#btnMore").addEventListener("click", () => {
+                    this.toPage("pageMore"), this.pageMore(), s.$pauseaudio("#voiceover-audio-mp3"), s.$overflowToggle()
+                }, !1),
+                s.$("#btnToggleLookControls").addEventListener("click", () => {
+                    s.$toggleLookControls(true)
             }, !1)
         }
         pageMore() {
             s.$("#btnBack").addEventListener("click", () => {
-                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide(), s.$toggleLookControls(true)
+                this.pageScanning(), this.toPage("pageScanning"), s.$overflowToggle, s.$aframeHide()
             }, !1)
         }
         pagePreview() {
