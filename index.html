@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+
     <!-- orientation control ////////////////////////// -->
     <div class="rotatephone" style="background-color: black;">
         <img src="resources/rotate_phone_words_white_2.png"
@@ -106,18 +106,24 @@
 
     <!-- ////////////////////////////////////////////////////// -->
     <!-- ////////////////////////////////////////////////////// -->
-    <!-- ////////////////////////////////////////////////////// -->
+    <!-- //////////////////////////////////////////////////////
+
+            <video id="penguin-sledding" autoplay loop src="resources/renyu1.mp4"></video>
+        <a-video src="#penguin-sledding" width="16" height="9" position="0 4 -17" scale="2 2 1"></a-video>
+
+        -->
 
     <a-scene embedded style="z-index: -100" vr-mode-ui='enabled: false;'>
         <a-node id="dummy"></a-node>
 
         <a-assets>
-            <video id="penguin-sledding" autoplay loop src="resources/renyu1.mp4"></video>
+            <img id="my-image" src="resources/renyu_main_poster_cut1.png">
         </a-assets>
 
-        <a-video src="#penguin-sledding" width="16" height="9" position="0 4 -17" scale="2 2 1"></a-video>
+        <a-image src="#my-image" position="0 3 -25" scale="15 12 0"></a-image>
+
         <a-entity>
-            <a-camera wasd-controls-enabled="true" look-controls-enabled="true" />
+            <a-camera wasd-controls-enabled="false" look-controls-enabled="true" camera="fov:40"/>
         </a-entity>
     </a-scene>
 
