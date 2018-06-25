@@ -318,9 +318,6 @@
                 console.info(t), this.removeVideo(), e ? this.loadPackage() : (alert("打开摄像头失败，请点击“立即体验”。"), this.toPage("pageFirst"))
             })
         }
-        removeVideo() {
-            document.body.removeChild(this.video)
-        }
         loadPackage(e = null) {
             s.$show("#btnReady"),
                 s.$show("#pageScanning"),
