@@ -264,7 +264,7 @@
         }
         pageScanning() {
             s.$("#btnReady").addEventListener("click", () => {
-                this.posterDisplay()
+                this.posterDisplay(), s.$('#renyuMP4').play()
             }, !1)
         }
         posterDisplay() {
