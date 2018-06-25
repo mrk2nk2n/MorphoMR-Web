@@ -241,7 +241,7 @@
     }
     new class {
         constructor() {
-            this.apiHost = "/api/webar01/", this.isTurntableRunning = !1, this.userId = "", this.video = document.querySelector("#video"), this.isMiniprogram = !1, this.webAr = new i(1e3, "recognize.php"), this.checkWx(), this.pageFirst()
+            this.apiHost = "/api/webar01/", this.isTurntableRunning = !1, this.userId = "", this.video = document.querySelector("#videoDisplay"), this.isMiniprogram = !1, this.webAr = new i(1e3, "recognize.php"), this.checkWx(), this.pageFirst()
         }
         checkWx() {
             s.isWeiXin() ? (this.isMiniprogram = s.isMiniprogram(), this.isMiniprogram ? this.openCamera(!0) : (s.$show("#pageFirst"), s.isIos() && (s.$show("#pageWxIos"), s.$("#pageWxIos").addEventListener("click", () => {
@@ -317,6 +317,9 @@
             }).catch(t => {
                 console.info(t), this.removeVideo(), e ? this.loadPackage() : (alert("打开摄像头失败，请点击“立即体验”。"), this.toPage("pageFirst"))
             })
+        }
+        removeVideo() {
+            document.body.removeChild(this.video)
         }
         loadPackage(e = null) {
             s.$show("#btnReady"),
